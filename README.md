@@ -35,3 +35,9 @@ steps = [(-2, - 1), (-1, -2), (1, -2), (2, -1), (2, 1), (1, 2), (-1, 2), (-2, 1)
 for step in steps:
   bla bla~
 ```
+
+- n x m 공간에 숫자로 
+```
+n, m = map(int, input().split())
+d = [[0] * m for _ in range(n)]
+```
