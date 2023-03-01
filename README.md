@@ -7,8 +7,14 @@
 
 - n x n 리스트 입력 받기
 ```
+li = []
 for i in range(n):
   li = list(map(int, input().list()))
+```
+또는
+```
+for i in range(n):
+  li.append(list(map(int, input())))
 ```
 
 - n x n 공간
@@ -36,7 +42,7 @@ for step in steps:
   bla bla~
 ```
 
-- n x m 공간에 숫자로 
+- n x m 공간에 숫자로 채우기
 ```
 n, m = map(int, input().split())
 d = [[0] * m for _ in range(n)]
