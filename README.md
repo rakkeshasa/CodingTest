@@ -41,3 +41,20 @@ for step in steps:
 n, m = map(int, input().split())
 d = [[0] * m for _ in range(n)]
 ```
+
+- 반복과 재귀의 차이
+```
+# 반복
+def factorial_iterative(n):
+  result = 1
+  for i in range(1, n+1):
+    result *= i
+   return result
+   
+# 재귀
+def factorial_recursive(n):
+  if n <= 1:
+    return 1
+   
+  return n * factorial_recursive(n - 1)
+```
