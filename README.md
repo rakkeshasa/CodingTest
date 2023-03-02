@@ -5,6 +5,13 @@
 <pre><code>list(map(int, input().split()))
 </code></pre>
 
+- 리스트에 이름과 숫자 받기
+```
+for i in range(n):
+  data = input().split()
+  array.append((data[0], int(data[1])))
+```
+
 - n x n 리스트 입력 받기
 ```
 li = []
