@@ -1,0 +1,14 @@
+n = int(input())
+m = list(map(int, input().split()))
+
+m.sort()
+
+target = 1
+
+for i in m:
+  if i > target:
+    break
+  else:
+    target += i
+
+print(target)
