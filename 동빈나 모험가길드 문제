@@ -1,1 +1,21 @@
-한 마을에 모험가가 N명 있습니다. 
+n = int(input())
+m = list(map(int, input().split()))
+
+m.sort()
+max = m[-1]
+sum = len(m)
+
+cnt = 0
+person = 1
+
+for i in range(max):
+  if sum < person:
+    break
+    
+  if person >= m[i]:
+    cnt += 1
+    sum -= person
+
+  person += 1
+
+print(cnt)
