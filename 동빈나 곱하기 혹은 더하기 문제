@@ -1,0 +1,11 @@
+n = list(str(input()))
+
+sum = 0
+
+for i in range(len(n)):
+  if int(n[i]) == 1 or int(n[i]) == 0 or sum == 0:
+    sum += int(n[i])
+  else:
+    sum *= int(n[i])
+
+print(sum)
