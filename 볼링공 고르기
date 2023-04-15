@@ -1,0 +1,14 @@
+n = list(map(int, input().split()))
+m = list(map(int, input().split()))
+
+max = int(n[0] * (n[0] - 1) / 2)
+cnt = 0
+result = 0
+
+for i in range(len(m)):
+  for j in range(i):
+    if m[i] == m[j]:
+      cnt += 1
+
+result = max - cnt
+print(result)
