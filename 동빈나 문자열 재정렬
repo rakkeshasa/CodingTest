@@ -1,0 +1,16 @@
+n = list(input())
+n.sort()
+alpha = []
+sum = 0
+
+for i in range(len(n)):
+  if n[i].isalpha():
+    alpha.append(n[i])
+  else:
+    sum += int(num[i])
+
+if sum != 0:
+  alpha.append(sum)
+
+for i in alpha:
+  print(i, end='')
