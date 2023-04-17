@@ -78,3 +78,16 @@ def factorial_recursive(n):
 for i in list:
   print(i, end='')
 ```
+
+
+- 리스트 내 요소를 n개씩 순서대로 추출(2020카카오)
+```
+for step in range(1, len(n) // 2 + 1):
+  prev = s[0: step]
+  
+  for j in range(step, len(n), step):
+    if prev == s[j: j + step]:
+      bla bla bla..
+    else:
+      prev = s[j: j + step]
+```
