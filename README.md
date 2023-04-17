@@ -71,3 +71,10 @@ def factorial_recursive(n):
    
   return n * factorial_recursive(n - 1)
 ```
+
+
+- 리스트 요소 한줄로 출력
+```
+for i in list:
+  print(i, end='')
+```
