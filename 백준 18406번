@@ -1,0 +1,16 @@
+n = input()
+
+a = len(n)
+
+sum = 0
+
+for i in range(a//2):
+  sum += int(n[i])
+
+for i in range(a//2, a):
+  sum -= int(n[i])
+
+if sum == 0:
+  print('LUCKY')
+else:
+  print('READY')
