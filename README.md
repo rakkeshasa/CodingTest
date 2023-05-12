@@ -107,3 +107,65 @@ def rotate_a_matrix_by_90_degree(a):
                 
         return result
 ```
+
+- unpacking 기법
+```
+d = {'b': 2, 'a': 1}
+li = [2, 1]
+
+def func(a, b):
+    print(a, b)
+
+func(a=1, b=2)
+func(*li)
+func(**d)
+```
+
+- 향상된 for문
+```
+members = [
+    ['이숙번', 'enuma', '통영'],
+    ['이고잉', '오튜', '서울'],
+    ['솔님', '솔앤유', '제주'],
+]
+
+for i in range(3):
+    print(members[i])
+
+for m in members:
+    print(m[0], m[1], m[2])
+    
+for name, company, location in members:
+    print(name, company, location)
+```
+
+- 사전형의 경우(items)
+```
+animals = {'cat': 1, 'dog': 2, 'sheep': 4, 'fish': 2}
+
+for k, v in animals.items():
+    print(k, v)
+```
+
+- enumerate
+```
+animals = ['cat', 'dog', 'sheep', 'fish']
+
+for i in range(4):
+    print(i, animals[i])
+
+for i, e in enumerate(animals):
+    print(i, e)
+```
+
+- zip함수
+```
+names = ['이숙번', '이고잉', '솔님']
+company = ['enuma', '오튜', '솔앤유']
+
+for i in range(len(names)):
+    print(names[i], company[i])
+
+for n, c in zip(names, company):
+    print(n, c)
+```
