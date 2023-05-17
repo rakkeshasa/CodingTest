@@ -169,3 +169,14 @@ for i in range(len(names)):
 for n, c in zip(names, company):
     print(n, c)
 ```
+
+- 다익스트라 그래프 초반 구현
+```
+n, m = map(int, input().split())
+graph=[[] for i in range(n + 1)]
+distance = [-1] * (n + 1)
+
+for _ in range(m):
+  a, b = list(map(int, input().split()))
+  graph[a].append(b)
+```
