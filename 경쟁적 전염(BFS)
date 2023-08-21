@@ -1,0 +1,38 @@
+from collections import deque
+
+n, k = map(int, input().split())
+
+graph = [] # 보드
+data = [] # 바이러스
+
+for i in range(n):
+  graph.append(list(map(int, input().split()))) # 보드 입력
+  for j in range(n):
+    if graph[i][j] != 0: # 빈칸이 아니라면 = 바이러스가 있다면
+      data.append((graph[i][j], 0, i, j)) # 바이러스 보드에 그 칸의 값(바이러스의 종류)과 시간, 좌표를 넣음
+
+data.sort() # 바이러스 낮은 순으로 정렬
+q = deque(data) 
+
+target_s, target_x, target_y = map(int, input().split())
+
+# 4가지 방향
+dx = [-1, 0, 1, 0]
+dy = [0, 1, 0, -1]
+
+# BFS
+while q:
+  virus, s, x, y = q.popleft()
+  
+  if s == target_s: # s초가 지나면 끝
+    break
+
+  for i in range(4): # 바이러스 퍼뜨리기
+    nx = x+dx[i]
+    ny = y+dy[i]
+    if 0 <= nx and nx < n and 0 <= ny and ny < n: # 이동이 가능한 경우
+      if graph[nx][ny] == 0: # 다른 바이러스가 차지하지 않은 땅이라면
+        graph[nx][ny] = virus # 해당 바이러스가 점령
+        q.append((virus, s + 1, nx, ny)) # 다시 집어넣기
+
+print(graph[target_x - 1][target_y - 1]) # 문제에서 1부터 시작한다고 했으므로 -1을 해줌
