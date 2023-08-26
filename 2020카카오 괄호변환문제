@@ -1,0 +1,53 @@
+def balanced(p):
+    count = 0 # (의 개수
+    for i in range(len(p)):
+        if p[i] == '(':
+            count += 1
+        else:
+            count -= 1
+        if count == 0:
+            return i # 카운트가 0이 되면서 균형이 잡히게되는 순서
+        
+def check(p):
+    count = 0
+    for i in p:
+        if i == '(':
+            count += 1
+        else:
+            # (가 처음에 안나왔다면 올바르지 않음
+            if count == 0:
+                return False
+            
+            # (가 처음에 나와 카운트가 1이면 )이 나올경우 -1
+            count -= 1
+    return True
+            
+
+def solution(p):
+    answer = ''
+    
+    # 빈 문자열이면 그대로 리턴
+    if p == '':
+        return answer
+    
+    index = balanced(p)
+    u = p[:index + 1]
+    v = p[index + 1:]
+    
+    if check(u):
+        answer = u + solution(v)
+    else:
+        answer = '('
+        answer += solution(v)
+        answer += ')'
+        
+        u = list(u[1:-1])
+        
+        for i in range(len(u)):
+            if u[i] == '(':
+                u[i] = ')'
+            else:
+                u[i] = '('
+        
+        answer += "".join(u)
+    return answer
