@@ -180,3 +180,58 @@ for _ in range(m):
   a, b = list(map(int, input().split()))
   graph[a].append(b)
 ```
+
+- BFS구현(큐)
+```
+def BFS(graph, start, visited):
+  q = deque([start])
+  visited[start] = True
+
+  while q:
+    now = q.popleft()
+    print(now, end = ' ')
+
+    for connect in graph[now]:
+      if visited[connect] == False
+        q.append(connect)
+        visited[connect] = True
+```
+
+- DFS구현(재귀함수)
+```
+def DFS(graph, start, visited):
+  visited[start] = True
+  print(start, end = ' ')
+
+  for connect in graph[start]:
+    if not visited[connect]:
+      DFS(graph, connect, visited)
+```
+
+- 다익스트라 구현(BFS + 코스트)
+```
+def Dijkstra(start):
+  q = []
+  heapq.heappush(q, (0, start))
+  distance[start] = 0
+
+  while q:
+    dist, now = heapq.popleft()
+    if distance[now] < dist:
+      continue
+
+    for connect in graph[now]:
+      cost = dist + connect[1]
+
+      if distance[connect[0]] > cost:
+        distance[connect[0]] = cost
+        heapq.heappush(q, (cost, connect[0]))
+```
+
+- 플로이드워셜 구현
+```
+for k in range(1, n + 1):
+  for a in range(1, n + 1):
+    for b in range(1, n + 1):
+      dist[a][b] = min(dist[a][b], dist[a][k] + dist[k][b])
+```
